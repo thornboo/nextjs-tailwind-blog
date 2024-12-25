@@ -4,11 +4,11 @@ import siteMetadata from '@/data/siteMetadata'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 
 const generateRssItem = (post: PostFrontMatter) => {
-  const { images } = post
-  const src = Array.isArray(images) ? images[0] : images
-  const img = src ? `<img src="${src}" width="800">` : ''
-  const summary = post.summary && `<p><small>${post.summary}</small></p>`
-  return `
+    const { images } = post
+    const src = Array.isArray(images) ? images[0] : images
+    const img = src ? `<img src="${src}" width="800">` : ''
+    const summary = post.summary && `<p><small>${post.summary}</small></p>`
+    return `
     <item>
       <guid>${siteMetadata.siteUrl}/blog/${post.slug}</guid>
       <title>${escape(post.title)}</title>
